@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Giỏ Hàng{% endblock %}
+{% block content %}
+<h1>Giỏ hàng của bạn</h1>
+{% for item in cart_products %}
+    <p>{{ item.name }} - {{ item.quantity }} x {{ item.price }} VND = {{ item.total }} VND</p>
+{% endfor %}
+<h3>Tổng cộng: {{ total_price }} VND</h3>
+<a href="/checkout" class="btn btn-success">Đặt hàng</a>
+{% endblock %}
